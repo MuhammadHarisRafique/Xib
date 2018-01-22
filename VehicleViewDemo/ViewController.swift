@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
         return .default
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -34,13 +35,47 @@ class ViewController: UIViewController {
              let vehicleView = VehicleUIView.instanceFromNib()
              vehicleView.lbl_vehiclename.text = self.vehiclename[i]
              vehicleView.lbl_passengerQauntity.text = self.passenger[i]
+            
+            if i == 0{
+                
+                vehicleView.lbl_passengerQauntity.textColor = UIColor.green
+                vehicleView.lbl_vehiclename.textColor = UIColor.green
+                let image = UIImage(named: "passenger.png")?.withRenderingMode(.alwaysTemplate)
+                vehicleView.imageView.tintColor = UIColor.green
+                vehicleView.imageView.image = image
+                
+            }
              vehicleView.frame = frame
+            
+            self.addtabgesture(myView: vehicleView,tag: Int8(i))
              self.navBarView.addSubview(vehicleView)
             
         }
     }
     
+    @objc func abc(sender:MyTabGesture){
+        
+        print(sender.tag!)
+        print("asfsdnfjfdsnvdvjk")
+        
+    }
     
-   
+    func addtabgesture(myView:UIView,tag:Int8){
+        
+        let singleTap: MyTabGesture = MyTabGesture(target: self, action: #selector(self.abc(sender:)))
+        singleTap.numberOfTapsRequired = 1
+        singleTap.tag = tag
+        myView.isUserInteractionEnabled = true
+        myView.addGestureRecognizer(singleTap)
+        
+    }
+    
 }
+
+class MyTabGesture:UITapGestureRecognizer {
+    
+    var tag:Int8?
+    
+}
+
 
