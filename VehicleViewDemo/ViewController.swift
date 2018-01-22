@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     let vehiclename = ["Saloon","MPV"]
     let passenger = ["4","6"]
+    var views:[VehicleUIView] = []
+    var previousTag = 0
     
   
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -43,24 +45,53 @@ class ViewController: UIViewController {
                 let image = UIImage(named: "passenger.png")?.withRenderingMode(.alwaysTemplate)
                 vehicleView.imageView.tintColor = UIColor.green
                 vehicleView.imageView.image = image
+                self.previousTag = i
                 
             }
              vehicleView.frame = frame
-            
-            self.addtabgesture(myView: vehicleView,tag: Int8(i))
-             self.navBarView.addSubview(vehicleView)
+             self.addtabgesture(myView: vehicleView,tag:i)
+             self.views.append(vehicleView)
             
         }
+        
+        for item in self.views{
+            
+           self.navBarView.addSubview(item)
+            
+        }
+        
     }
     
     @objc func abc(sender:MyTabGesture){
         
         print(sender.tag!)
-        print("asfsdnfjfdsnvdvjk")
+        self.updateViews(previousTag: self.previousTag, newTag: sender.tag!)
         
     }
     
-    func addtabgesture(myView:UIView,tag:Int8){
+    func updateViews(previousTag:Int,newTag:Int){
+        
+        let previousSelected = self.views[previousTag]
+        previousSelected.lbl_passengerQauntity.textColor = UIColor.white
+        previousSelected.lbl_vehiclename.textColor = UIColor.white
+        let image = UIImage(named: "passenger.png")?.withRenderingMode(.alwaysTemplate)
+        previousSelected.imageView.tintColor = UIColor.white
+        previousSelected.imageView.image = image
+        self.views[previousTag] = previousSelected
+        
+        let newView = self.views[newTag]
+        newView.lbl_passengerQauntity.textColor = UIColor.green
+        newView.lbl_vehiclename.textColor = UIColor.green
+        let newimage = UIImage(named: "passenger.png")?.withRenderingMode(.alwaysTemplate)
+        newView.imageView.tintColor = UIColor.green
+        newView.imageView.image = newimage
+        self.views[newTag] = newView
+        
+        self.previousTag = newTag
+        
+        
+    }
+    func addtabgesture(myView:UIView,tag:Int){
         
         let singleTap: MyTabGesture = MyTabGesture(target: self, action: #selector(self.abc(sender:)))
         singleTap.numberOfTapsRequired = 1
@@ -74,7 +105,7 @@ class ViewController: UIViewController {
 
 class MyTabGesture:UITapGestureRecognizer {
     
-    var tag:Int8?
+    var tag:Int?
     
 }
 
