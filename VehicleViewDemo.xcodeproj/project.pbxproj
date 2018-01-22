@@ -12,6 +12,9 @@
 		4D4BA106201372B40039AA90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA104201372B40039AA90 /* Main.storyboard */; };
 		4D4BA108201372B40039AA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA107201372B40039AA90 /* Assets.xcassets */; };
 		4D4BA10B201372B40039AA90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA109201372B40039AA90 /* LaunchScreen.storyboard */; };
+		4D4BA1132013753F0039AA90 /* passenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA1122013753F0039AA90 /* passenger.png */; };
+		4D842245201384F6009F1CD5 /* VehicleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D842244201384F6009F1CD5 /* VehicleView.xib */; };
+		4D842247201385B9009F1CD5 /* VehicleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D842246201385B9009F1CD5 /* VehicleUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		4D4BA107201372B40039AA90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D4BA10A201372B40039AA90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D4BA10C201372B40039AA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D4BA1122013753F0039AA90 /* passenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passenger.png; sourceTree = "<group>"; };
+		4D842244201384F6009F1CD5 /* VehicleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleView.xib; sourceTree = "<group>"; };
+		4D842246201385B9009F1CD5 /* VehicleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				4D4BA100201372B40039AA90 /* AppDelegate.swift */,
+				4D4BA1122013753F0039AA90 /* passenger.png */,
 				4D4BA102201372B40039AA90 /* ViewController.swift */,
 				4D4BA104201372B40039AA90 /* Main.storyboard */,
 				4D4BA107201372B40039AA90 /* Assets.xcassets */,
 				4D4BA109201372B40039AA90 /* LaunchScreen.storyboard */,
 				4D4BA10C201372B40039AA90 /* Info.plist */,
+				4D842244201384F6009F1CD5 /* VehicleView.xib */,
+				4D842246201385B9009F1CD5 /* VehicleUIView.swift */,
 			);
 			path = VehicleViewDemo;
 			sourceTree = "<group>";
@@ -124,6 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4BA10B201372B40039AA90 /* LaunchScreen.storyboard in Resources */,
+				4D4BA1132013753F0039AA90 /* passenger.png in Resources */,
+				4D842245201384F6009F1CD5 /* VehicleView.xib in Resources */,
 				4D4BA108201372B40039AA90 /* Assets.xcassets in Resources */,
 				4D4BA106201372B40039AA90 /* Main.storyboard in Resources */,
 			);
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4BA103201372B40039AA90 /* ViewController.swift in Sources */,
+				4D842247201385B9009F1CD5 /* VehicleUIView.swift in Sources */,
 				4D4BA101201372B40039AA90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
